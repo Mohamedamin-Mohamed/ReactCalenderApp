@@ -3,3 +3,11 @@
     padding: 0;
     margin: 0;
 }
+.button{
+    transition: transform 0.2s ease-in-out;
+}
+.button :hover{
+    transform: scale(2.2);
+}
+
+  
