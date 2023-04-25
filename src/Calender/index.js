@@ -24,7 +24,7 @@ export const Calendar = () => {
     }
   };
 
-  //when previous month button is clicked 
+  //when previous month button is clicked, this method will be triggered
   const handlePrevMonth = () => {
     if (currentMonth === 0) {
       setCurrentYear(currentYear - 1);
