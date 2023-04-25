@@ -24,11 +24,21 @@ export const Calendar = () => {
     }
   };
 
+  
+  const handlePrevMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentYear(currentYear - 1);
+      setCurrentMonth(11);
+    } else {
+      setCurrentMonth(currentMonth - 1);
+    }
+  };
+
   // Render the header with the current month and year, and previous and next month buttons
   const renderHeader = () => {
     return (
       <CalenderHead>
-        <button class="button" onClick={handleNextMonth}>
+        <button class="button" onClick={handlePrevMonth}>
           <ion-icon class="icon" name="arrow-back-circle-outline"></ion-icon>
         </button>
         <p>{`${new Date(currentYear, currentMonth, 1).toLocaleString("default", {
@@ -40,6 +50,7 @@ export const Calendar = () => {
       </CalenderHead>
     );
   };
+  
 
   // Render the row of day of week labels (e.g. "Sun", "Mon", etc.)
   const renderDaysOfWeek = () => {
