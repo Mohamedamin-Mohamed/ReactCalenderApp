@@ -40,3 +40,7 @@ border: 1px solid;
 text-align: right;
 padding: 3px;
 `
+
+export const StyledEvent = styled.span`
+
+`

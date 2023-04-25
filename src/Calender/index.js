@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { DAYS } from "./conts";
-import { CalenderBody, CalenderHead, HeadDay, SevenColGrid, StyledDay, Wrapper } from "./styled";
-import { range } from "./utils";
+import { CalenderBody, CalenderHead, HeadDay, SevenColGrid, StyledDay, StyledEvent, Wrapper } from "./styled";
+import { checkDates, checkSameDate, range } from "./utils";
 
-export const Calendar = () => {
+export const Calendar = ({eventsArr}) => {
 
   // Initialize state variables for the current month and year
   const today = new Date();
@@ -60,15 +60,24 @@ export const Calendar = () => {
     return (
       <CalenderBody>
         {blankDays.map(() => (
-          <StyledDay></StyledDay>
+          <StyledDay>
+          </StyledDay>
         ))}
         {range(daysInMonth).map((day) => (
-          <StyledDay>{day}</StyledDay>
+          <StyledDay>
+            {day}
+            {/* check if the user are in the same date as the event and display the corresponding event */}
+            {eventsArr.map((ev) => (
+                checkSameDate(new Date(currentYear,currentMonth,day),ev.date,ev) && <StyledEvent>{ev.title}</StyledEvent>
+
+            ))}
+            {//eventsArr.map((ev)=> <StyledEvent>{ev.title}</StyledEvent>)
+            }
+          </StyledDay>
         ))}
       </CalenderBody>
     );
   };
-
   // Render the entire calendar using the above helper functions
   return (
     <Wrapper>
