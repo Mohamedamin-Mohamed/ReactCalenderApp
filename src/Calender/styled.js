@@ -42,5 +42,11 @@ padding: 3px;
 `
 
 export const StyledEvent = styled.span`
+display: grid;
+test-align: left;
+background: darkblue;
+color: white;
+padding: 2px 5px;
+border-radius: 8px;
 
 `

@@ -23,11 +23,14 @@ export const checkSameDate = (first,second,obj) => {
   const firstDate = first.toDateString().split(" ");
   const secondDate = second.toDateString().split(" ");
 
+  /* debugger
   console.log(firstDate[1]);
   console.log(secondDate[1]);
+  
   if(firstDate[1] === secondDate[1] && firstDate[3] === secondDate[3] && firstDate[2] == secondDate[2]){
     console.log("working");
   }
+  */
   
   return firstDate[1] === secondDate[1] &&
   firstDate[2] === secondDate[2] &&

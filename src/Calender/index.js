@@ -34,6 +34,12 @@ export const Calendar = ({eventsArr}) => {
     }
   };
 
+  const onAddEvent = (date) =>{
+    const text = window.prompt("text");
+    const temp = date.toDateString().split(" ");
+    console.log(temp[1] + " " + temp[2] + " " + temp[3]);
+  }
+
   // Render the header with the current month and year, and previous and next month buttons
   const renderHeader = () => {
     return (
@@ -75,7 +81,7 @@ export const Calendar = ({eventsArr}) => {
           </StyledDay>
         ))}
         {range(daysInMonth).map((day) => (
-          <StyledDay>
+          <StyledDay onClick={() => onAddEvent(new Date(currentYear,currentMonth,day))}>
             {day}
             {/* check if the user are in the same date as the event and display the corresponding event */}
             {eventsArr.map((ev) => (
