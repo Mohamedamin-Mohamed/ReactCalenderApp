@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DAYS } from "./conts";
 import { CalenderBody, CalenderHead, HeadDay, SevenColGrid, StyledDay, StyledEvent, Wrapper } from "./styled";
-import { checkDates, checkSameDate, range } from "./utils";
+import { checkDates, checkSameDate, range ,textFile} from "./utils";
 
 export const Calendar = ({eventsArr}) => {
 
@@ -36,8 +36,10 @@ export const Calendar = ({eventsArr}) => {
 
   const onAddEvent = (date) =>{
     const text = window.prompt("text");
-    const temp = date.toDateString().split(" ");
-    console.log(temp[1] + " " + temp[2] + " " + temp[3]);
+    textFile();
+    
+    //const temp = date.toDateString().split(" ");
+    //console.log(temp[1] + " " + temp[2] + " " + temp[3]);
   }
 
   // Render the header with the current month and year, and previous and next month buttons

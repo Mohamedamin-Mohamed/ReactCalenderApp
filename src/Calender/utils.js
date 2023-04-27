@@ -1,5 +1,6 @@
 import { DAYS } from "./conts";
 import { StyledEvent } from "./styled";
+import text from './date.txt';
 
 export const range = (end) =>{
     const {result} = Array.from({length: end}).reduce(
@@ -37,3 +38,11 @@ export const checkSameDate = (first,second,obj) => {
   firstDate[3] === secondDate[3];
 
 }
+
+export const textFile = () => {
+  fetch(text).then(r => r.text()).then(text =>{
+    console.log(text);
+  })
+}
+
+

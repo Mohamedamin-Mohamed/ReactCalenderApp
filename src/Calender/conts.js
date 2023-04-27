@@ -1,3 +1,5 @@
+
+
 export const DAYS = ['Sun','Mon','Tue','Wed','Thur','Fri','Sat'];
 
 
@@ -8,3 +10,4 @@ export const MOCKEVENTS = [
     { date: new Date(2023,3,25), title: 'doctors'  },
     
 ];
+
