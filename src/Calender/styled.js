@@ -50,3 +50,31 @@ padding: 2px 5px;
 border-radius: 8px;
 
 `
+
+export const StyledEventDisplayer = styled.span`
+position: absolute;
+width: 50%;
+height: 40%;
+padding: 40px;
+top: 30%;
+left: 25%;
+color: red;
+border: 2px solid rgba(100, 100, 100, 1);
+border-radius: 4px;
+box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.3);
+
+`
+
+export const EventWrapper = styled.span`
+position: absolute;
+width: 50%;
+height: 40%;
+padding: 40px;
+top: 30%;
+left: 25%;
+color: red;
+border: 2px solid rgba(100, 100, 100, 1);
+border-radius: 4px;
+box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.3);
+
+`
