@@ -36,6 +36,7 @@ export const CalenderBody = styled.div`
 `
 
 export const StyledDay = styled.span`
+position: relative;
 border: 1px solid;
 text-align: right;
 padding: 3px;

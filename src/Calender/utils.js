@@ -22,6 +22,8 @@ export const checkDates = (date) => {
   //return `${d[1]} ${d[3]}`;
 };
 
+
+
 export const checkSameDate = (first,second,obj) => {
   const firstDate = first.toDateString().split(" ");
   const secondDate = second.toDateString().split(" ");

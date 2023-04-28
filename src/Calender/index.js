@@ -66,7 +66,8 @@ export const Calendar = () => {
       </CalenderHead>
     );
   };
-
+  
+  //eventdisplayer 
   const renderEventWrapper = () =>{
     console.log("hello");
     return (
@@ -102,7 +103,7 @@ export const Calendar = () => {
           </StyledDay>
         ))}
         {range(daysInMonth).map((day) => (
-          <StyledDay onClick={() => onAddEvent(new Date(currentYear,currentMonth,day))}>
+          <StyledDay >
             {day}
             {/* check if the user are in the same date as the event and display the corresponding event */}
                         
@@ -113,7 +114,11 @@ export const Calendar = () => {
             ))}
             {//eventsArr.map((ev)=> <StyledEvent>{ev.title}</StyledEvent>)
             }
-            <button style={{width: 50}}></button>
+            <button 
+            onClick={() => onAddEvent(new Date(currentYear,currentMonth,day))} 
+            style={{position: "absolute", left: '40%', top: '90%',width: '20%'}}>
+            add
+            </button>
           </StyledDay>
 
           
