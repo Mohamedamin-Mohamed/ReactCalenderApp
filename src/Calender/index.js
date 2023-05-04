@@ -39,7 +39,7 @@ export const Calendar = () => {
     }
   };
   
-
+  
   const onAddEvent = (date) =>{
     const text = window.prompt("text");
     if(text){
@@ -71,21 +71,19 @@ export const Calendar = () => {
     );
   };
   
-  //eventdisplayer 
-  const openEvent = () => {
-    setShowEvent(true);
+  //deleting to-dos handling
+  const handleDelete = (data) => {
+    setEvents((prevEvents) =>
+      prevEvents.filter((ev) => ev.title !== data.title)
+    );
+  };
 
-  }
-
-  const closeEvent = () => {
-    setEvents(false);
-  }
-
-  const eventWrapper = () =>{
+  //Pop ups for event
+  const eventWrapper = ({title,date}) =>{
     return (
       <StyledEventDisplayer>
-        <h2>event</h2>
-        <p>Date</p>
+        <h2>{title}</h2>
+        <p>{date.toDateString()}</p>
       </StyledEventDisplayer>
       
     )
@@ -121,14 +119,17 @@ export const Calendar = () => {
                         
             {
             events.map((ev) => (
+                //mapping out the events to the corresponding date
                 checkSameDate(new Date(currentYear,currentMonth,day),ev.date,ev) && 
-                <StyledEvent><p  onClick={() => openEvent()}>{ev.title}</p><button>x</button></StyledEvent>
+                <StyledEvent>
+                <p onMouseOver={()=> (setShowEventData(ev),setShowEvent(true))} onMouseOut={()=>setShowEvent(false)}>{ev.title}</p>
+                <button onClick={()=> (handleDelete(ev))}>x</button>
+                </StyledEvent>
                 
             ))}
             
-            {//eventsArr.map((ev)=> <StyledEvent>{ev.title}</StyledEvent>)
-            }
-            <button 
+          
+            <button // add button for event
             onClick={() => onAddEvent(new Date(currentYear,currentMonth,day))} 
             style={{position: "absolute", left: '40%', top: '90%',width: '20%'}}>
             add
@@ -140,7 +141,7 @@ export const Calendar = () => {
           
           
         ))}
-        {showEvent && eventWrapper()}
+        {showEvent && eventWrapper(EventData)}
       </CalenderBody>
 
     );
