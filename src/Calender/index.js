@@ -11,7 +11,8 @@ export const Calendar = () => {
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [events,setEvents] = useState(MOCKEVENTS)
-  const [showEvent, setShowPortal] = useState(false);
+  const [showEvent, setShowEvent] = useState(false);
+  const [EventData, setShowEventData] = useState({});
  
 
   // Event handler for the next month button and  to move to the next month when the "Next Month" button is clicked
@@ -71,11 +72,16 @@ export const Calendar = () => {
   };
   
   //eventdisplayer 
-  function setEvent(){
-    setEvents = true;
+  const openEvent = () => {
+    setShowEvent(true);
+
   }
-  const renderEventWrapper = () =>{
-    console.log("hello");
+
+  const closeEvent = () => {
+    setEvents(false);
+  }
+
+  const eventWrapper = () =>{
     return (
       <StyledEventDisplayer>
         <h2>event</h2>
@@ -116,7 +122,7 @@ export const Calendar = () => {
             {
             events.map((ev) => (
                 checkSameDate(new Date(currentYear,currentMonth,day),ev.date,ev) && 
-                <StyledEvent><p  onClick={() => setEvent()}>{ev.title}</p><button>x</button></StyledEvent>
+                <StyledEvent><p  onClick={() => openEvent()}>{ev.title}</p><button>x</button></StyledEvent>
                 
             ))}
             
@@ -127,15 +133,14 @@ export const Calendar = () => {
             style={{position: "absolute", left: '40%', top: '90%',width: '20%'}}>
             add
             </button>
-            {
-              showEvent && <eventWrapper/>
-            }
+           
           </StyledDay>
+          
 
           
           
         ))}
-
+        {showEvent && eventWrapper()}
       </CalenderBody>
 
     );
