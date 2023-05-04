@@ -4,7 +4,7 @@ import { MOCKEVENTS } from "./Calender/conts";
 import "./styles.css";
 
 function App() {
-  const[events,setEvents] = useState(MOCKEVENTS)
+  const[events,setEvents] = useState(MOCKEVENTS);
 
   const addEvent = (date,text) =>{
     setEvents(prev => [...prev],{date,title: text});

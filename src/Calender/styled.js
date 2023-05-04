@@ -9,7 +9,8 @@ export const Wrapper =  styled.div`
 
 
 export const CalenderHead = styled.div`
-    width: 100%;   
+
+    width: 100%;  
     height: 40px;
     display: flex;
     justify-content: space-around;
@@ -25,7 +26,7 @@ export const SevenColGrid = styled.div`
 `
 export const HeadDay = styled.span`
     text-align: center;
-    background: red;
+    background: teal;
     font-size: 1.2rem;
 `
 export const CalenderBody = styled.div`
@@ -37,19 +38,29 @@ export const CalenderBody = styled.div`
 
 export const StyledDay = styled.span`
 position: relative;
+display: block;
 border: 1px solid;
 text-align: right;
 padding: 3px;
 `
 
 export const StyledEvent = styled.span`
-display: grid;
+*{
+    display:inline-block;
+    margin-bottom:5px;
+}
+p{
+width: 90%;
 test-align: left;
-background: darkblue;
+background: teal;
 color: white;
 padding: 2px 5px;
 border-radius: 8px;
-
+}
+button{
+    height:15%;
+    width:10%;
+}
 `
 
 export const StyledEventDisplayer = styled.span`
