@@ -1,8 +1,6 @@
 {
   "name": "calendar",
   "version": "0.1.0",
-  "main": "index.js",
-  "type": "module",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
