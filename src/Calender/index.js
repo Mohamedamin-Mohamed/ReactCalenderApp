@@ -1,6 +1,6 @@
-import { DAYS } from "./conts"
-import { CalenderBody, CalenderHead, HeadDay, SevenColGrid, StyledDay, Wrapper } from "./styled"
-import {range} from "./utils";
+import { DAYS } from "./conts.js"
+import { CalenderBody, CalenderHead, HeadDay, SevenColGrid, StyledDay, Wrapper } from "./styled.js"
+import {range} from "./utils.js";
 
 export const Calendar = () =>{
     return <Wrapper>

@@ -1,4 +1,4 @@
-import { Calendar } from "./Calender";
+import { Calendar } from "./Calender/index.js";
 import "./styles.css";
 
 function App() {
